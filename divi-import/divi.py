@@ -37,7 +37,7 @@ for tr in dataList.find_all('tr'):
     if data['data']['icuLowCareId']: bedsICU += 200
     if data['data']['ecmoId']: bedsICU += 50
     
-    bedsICUUsed = randint(50, 80) / 100 * bedsICU
+    bedsICUUsed = int(randint(50, 80) / 100 * bedsICU)
     data['data']['bedsICU'] = bedsICU
     data['data']['bedsICUUsed'] = bedsICUUsed
     
