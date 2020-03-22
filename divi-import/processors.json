@@ -1,0 +1,324 @@
+{
+	"processors": [
+		{
+			"processorType": "inboundFactSheet",
+			"processorName": "Counties",
+			"processorDescription": "",
+			"type": "Place",
+			"filter": {
+				"type": "County"
+			},
+			"identifier": {
+				"external": {
+					"id": {
+						"expr": "${content.id}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"run": 0,
+			"updates": [
+				{
+					"key": {
+						"expr": "name"
+					},
+					"values": [
+						{
+							"expr": "${content.id}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"processorType": "inboundFactSheet",
+			"processorName": "Hospitals",
+			"processorDescription": "",
+			"type": "Hospital",
+			"filter": {
+				"type": "Hospital"
+			},
+			"identifier": {
+				"external": {
+					"id": {
+						"expr": "${content.id}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"run": 0,
+			"updates": [
+				{
+					"key": {
+						"expr": "name"
+					},
+					"values": [
+						{
+							"expr": "${content.id}"
+						}
+					]
+				},
+				{
+					"key": {
+						"expr": "location"
+					},
+					"values": [
+						{
+							"expr": "${data.location}"
+						}
+					]
+				},
+				{
+					"key": {
+						"expr": "bedsICU"
+					},
+					"values": [
+						{
+							"expr": "${data.bedsICU}"
+						}
+					]
+				},
+				{
+					"key": {
+						"expr": "bedsICUUsed"
+					},
+					"values": [
+						{
+							"expr": "${data.bedsICUUsed}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"processorType": "inboundTag",
+			"filter": {
+				"advanced": "${content.type.equals('Hospital') && content.data.hospitalType != null}"
+			},
+            "run": 1,
+			"factSheets": {
+				"external": {
+					"ids": "${content.id}",
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"updates": [
+				{
+					"key": {
+						"expr": "name"
+					},
+					"values": [
+						{
+							"expr": "${content.data.hospitalType}"
+						}
+					]
+				},
+				{
+					"key": {
+						"expr": "group.name"
+					},
+					"values": [
+						{
+							"expr": "Hospital Type"
+						}
+					]
+				}
+			]
+		},
+		{
+			"processorType": "inboundDocument",
+			"processorName": "websites for hospitals",
+			"processorDescription": "",
+			"filter": {
+				"advanced": "${content.type.equals('Hospital') && content.data.url != null}"
+			},
+			"identifier": {
+				"external": {
+					"id": {
+						"expr": "${content.id}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"run": 1,
+			"updates": [
+				{
+					"key": {
+						"expr": "name"
+					},
+					"values": [
+						{
+							"expr": "${content.id}"
+						}
+					]
+				},
+				{
+					"key": {
+						"expr": "url"
+					},
+					"values": [
+						{
+							"expr": "${content.data.url}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"processorType": "inboundRelation",
+			"type": "relHospitalToPlace",
+			"filter": {
+				"advanced": "${content.type.equals('Hospital') && content.data.county != null}"
+			},
+			"from": {
+				"external": {
+					"id": {
+						"expr": "${content.id}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"to": {
+				"external": {
+					"id": {
+						"expr": "${content.data.county}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"run": 1
+		},
+		{
+			"processorType": "inboundRelation",
+			"type": "relHospitalToBusinessCapability",
+			"filter": {
+				"advanced": "${content.type.equals('Hospital') && content.data.icuHighCare != 'unavailable'}"
+			},
+			"from": {
+				"external": {
+					"id": {
+						"expr": "${content.id}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"to": {
+				"external": {
+					"id": {
+						"expr": "${content.data.icuHighCareId}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"run": 1,
+			"updates": [
+				{
+					"key": {
+						"expr": "availability"
+					},
+					"values": [
+						{
+							"expr": "${content.data.icuHighCare}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"processorType": "inboundRelation",
+			"type": "relHospitalToBusinessCapability",
+			"filter": {
+				"advanced": "${content.type.equals('Hospital') && content.data.icuLowCare != 'unavailable'}"
+			},
+			"from": {
+				"external": {
+					"id": {
+						"expr": "${content.id}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"to": {
+				"external": {
+					"id": {
+						"expr": "${content.data.icuLowCareId}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"run": 1,
+			"updates": [
+				{
+					"key": {
+						"expr": "availability"
+					},
+					"values": [
+						{
+							"expr": "${content.data.icuLowCare}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"processorType": "inboundRelation",
+			"type": "relHospitalToBusinessCapability",
+			"filter": {
+				"advanced": "${content.type.equals('Hospital') && content.data.ecmo != 'unavailable'}"
+			},
+			"from": {
+				"external": {
+					"id": {
+						"expr": "${content.id}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"to": {
+				"external": {
+					"id": {
+						"expr": "${content.data.ecmoId}"
+					},
+					"type": {
+						"expr": "externalId"
+					}
+				}
+			},
+			"run": 1,
+			"updates": [
+				{
+					"key": {
+						"expr": "availability"
+					},
+					"values": [
+						{
+							"expr": "${content.data.ecmo}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
