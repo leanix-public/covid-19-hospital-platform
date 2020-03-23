@@ -1,0 +1,81 @@
+[
+    {
+        "name": "Data Source Status",
+        "shortName": null,
+        "description": "",
+        "mode": "SINGLE",
+        "restrictToFactSheetTypes": [
+            "DataSource"
+        ],
+        "tags": [
+            {
+                "name": "Connected - API",
+                "description": "",
+                "color": "#aeeda4",
+                "status": "ACTIVE"
+            },
+            {
+                "name": "Connected - Scraping",
+                "description": "",
+                "color": "#ffd146",
+                "status": "ACTIVE"
+            },
+            {
+                "name": "Manual",
+                "description": "",
+                "color": "#f9b4b4",
+                "status": "ACTIVE"
+            }
+        ]
+    },
+    {
+        "name": "Hospital Type",
+        "shortName": null,
+        "description": "",
+        "mode": "SINGLE",
+        "restrictToFactSheetTypes": [
+            "Hospital"
+        ],
+        "tags": [
+            {
+                "name": "Regular",
+                "description": "",
+                "color": "#95c2ff",
+                "status": "ACTIVE"
+            },
+            {
+                "name": "University",
+                "description": "",
+                "color": "#bdf1b1",
+                "status": "ACTIVE"
+            }
+        ]
+    },
+    {
+        "name": "Warnings",
+        "shortName": null,
+        "description": null,
+        "mode": "MULTIPLE",
+        "restrictToFactSheetTypes": [],
+        "tags": [
+            {
+                "name": "ECMO Limited Availablity",
+                "description": "",
+                "color": "#ff0000",
+                "status": "ACTIVE"
+            },
+            {
+                "name": "ICU High Care Limited Availablity",
+                "description": "",
+                "color": "#ffb500",
+                "status": "ACTIVE"
+            },
+            {
+                "name": "ICU Low Care Limited Availablity",
+                "description": "",
+                "color": "#fff600",
+                "status": "ACTIVE"
+            }
+        ]
+    }
+]

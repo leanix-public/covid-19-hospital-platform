@@ -1,0 +1,838 @@
+{
+    "factSheets": [
+        {
+            "type": "BusinessCapability",
+            "bgColor": "#003399",
+            "color": "#fff",
+            "onTheFlyCreation": false,
+            "fieldMetaData": {
+                "lifecycle": {
+                    "values": {
+                        "plan": {
+                            "bgColor": "#d8d8d8",
+                            "icon": "plus-circle"
+                        },
+                        "phaseIn": {
+                            "bgColor": "#aaa",
+                            "icon": "plus-circle"
+                        },
+                        "active": {
+                            "bgColor": "#496a8f",
+                            "icon": "check-circle"
+                        },
+                        "phaseOut": {
+                            "bgColor": "#ffd02c",
+                            "icon": "minus-circle"
+                        },
+                        "endOfLife": {
+                            "bgColor": "#c00000",
+                            "icon": "minus-circle"
+                        }
+                    }
+                },
+                "relBusinessCapabilityToHospital": {
+                    "availability": {
+                        "icon": {
+                            "type": "star",
+                            "color": "#f3b307",
+                            "reverse": false
+                        },
+                        "values": {
+                            "red": {
+                                "bgColor": "#c00000"
+                            },
+                            "yellow": {
+                                "bgColor": "#ffd02c"
+                            },
+                            "green": {
+                                "bgColor": "#008000"
+                            }
+                        }
+                    }
+                }
+            },
+            "sections": [
+                {
+                    "label": "section.information",
+                    "subsections": [
+                        {
+                            "label": "subsection.nameDescription.label",
+                            "template": "fields",
+                            "templateOptions": {
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "alias",
+                                            "type": "text",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "externalId",
+                                            "type": "externalId",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        },
+                        {
+                            "label": "subsection.relationDiagram.label",
+                            "template": "relationDiagram",
+                            "templateOptions": null,
+                            "weight": 0.0
+                        }
+                    ],
+                    "tabs": [
+                        "default"
+                    ],
+                    "weight": 1.0
+                },
+                {
+                    "label": "section.dependencies",
+                    "subsections": [
+                        {
+                            "label": "subsection.parents.label",
+                            "helpText": "subsection.parents.helpText",
+                            "template": "relation",
+                            "templateOptions": {
+                                "relationName": "relToParent",
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        }
+                    ],
+                    "tabs": [
+                        "default"
+                    ],
+                    "weight": 1.0
+                },
+                {
+                    "label": "section.demandManagement",
+                    "subsections": [
+                        {
+                            "label": "subsection.factSheetsSupporting.label",
+                            "helpText": "subsection.factSheetsSupporting.helpText",
+                            "template": "relation",
+                            "templateOptions": {
+                                "relationName": "relBusinessCapabilityToHospital",
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "availability",
+                                            "type": "status",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        }
+                    ],
+                    "tabs": [
+                        "default"
+                    ],
+                    "weight": 1.0
+                }
+            ],
+            "hoverConfig": null,
+            "factSheetTabRestriction": {
+                "surveys": [],
+                "metrics": [],
+                "subscriptions": [],
+                "comments": []
+            }
+        },
+        {
+            "type": "Place",
+            "bgColor": "#509fff",
+            "color": "#fff",
+            "onTheFlyCreation": false,
+            "fieldMetaData": {
+                "lifecycle": {
+                    "values": {
+                        "plan": {
+                            "bgColor": "#d8d8d8",
+                            "icon": "plus-circle"
+                        },
+                        "phaseIn": {
+                            "bgColor": "#aaa",
+                            "icon": "plus-circle"
+                        },
+                        "active": {
+                            "bgColor": "#496a8f",
+                            "icon": "check-circle"
+                        },
+                        "phaseOut": {
+                            "bgColor": "#ffd02c",
+                            "icon": "minus-circle"
+                        },
+                        "endOfLife": {
+                            "bgColor": "#c00000",
+                            "icon": "minus-circle"
+                        }
+                    }
+                },
+                "relPlaceToHospital": {
+                    "functionalSuitability": {
+                        "icon": {
+                            "type": "star",
+                            "color": "#f3b307",
+                            "reverse": false
+                        }
+                    }
+                }
+            },
+            "sections": [
+                {
+                    "label": "section.information",
+                    "subsections": [
+                        {
+                            "label": "subsection.nameDescription.label",
+                            "template": "fields",
+                            "templateOptions": {
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "alias",
+                                            "type": "text",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "externalId",
+                                            "type": "externalId",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        },
+                        {
+                            "label": "subsection.location.label",
+                            "helpText": "subsection.location.helpText",
+                            "template": "fields",
+                            "templateOptions": {
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "location",
+                                            "type": "location",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        },
+                        {
+                            "label": "subsection.relationDiagram.label",
+                            "template": "relationDiagram",
+                            "templateOptions": null,
+                            "weight": 0.0
+                        }
+                    ],
+                    "tabs": [
+                        "default"
+                    ],
+                    "weight": 1.0
+                },
+                {
+                    "label": "section.demandManagement",
+                    "subsections": [
+                        {
+                            "label": "subsection.factSheetsUsed.label",
+                            "helpText": "subsection.factSheetsUsed.helpText",
+                            "template": "relation",
+                            "templateOptions": {
+                                "relationName": "relPlaceToHospital",
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "usageType",
+                                            "type": "status",
+                                            "size": 4,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "numberOfUsers",
+                                            "type": "number",
+                                            "size": 4,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "functionalSuitability",
+                                            "type": "status",
+                                            "size": 4,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        }
+                    ],
+                    "tabs": [
+                        "default"
+                    ],
+                    "weight": 1.0
+                }
+            ],
+            "hoverConfig": null,
+            "factSheetTabRestriction": {
+                "surveys": [],
+                "subscriptions": [],
+                "comments": []
+            }
+        },
+        {
+            "type": "Hospital",
+            "bgColor": "#348fbc",
+            "color": "#fff",
+            "onTheFlyCreation": true,
+            "fieldMetaData": {
+                "lifecycle": {
+                    "values": {
+                        "plan": {
+                            "bgColor": "#d8d8d8",
+                            "icon": "plus-circle"
+                        },
+                        "phaseIn": {
+                            "bgColor": "#aaa",
+                            "icon": "plus-circle"
+                        },
+                        "active": {
+                            "bgColor": "#496a8f",
+                            "icon": "check-circle"
+                        },
+                        "phaseOut": {
+                            "bgColor": "#ffd02c",
+                            "icon": "minus-circle"
+                        },
+                        "endOfLife": {
+                            "bgColor": "#c00000",
+                            "icon": "minus-circle"
+                        }
+                    }
+                },
+                "businessCriticality": {
+                    "icon": {
+                        "type": "arrow-up",
+                        "color": "#aa0000",
+                        "reverse": false
+                    },
+                    "values": {
+                        "administrativeService": {
+                            "bgColor": "#4B8B07"
+                        },
+                        "businessOperational": {
+                            "bgColor": "#92D050"
+                        },
+                        "businessCritical": {
+                            "bgColor": "#FFF600"
+                        },
+                        "missionCritical": {
+                            "bgColor": "#C00000"
+                        }
+                    }
+                },
+                "functionalSuitability": {
+                    "icon": {
+                        "type": "star",
+                        "color": "#f3b307",
+                        "reverse": false
+                    },
+                    "values": {
+                        "perfect": {
+                            "bgColor": "#4B8B07"
+                        },
+                        "appropriate": {
+                            "bgColor": "#92D050"
+                        },
+                        "insufficient": {
+                            "bgColor": "#FFF600"
+                        },
+                        "unreasonable": {
+                            "bgColor": "#C00000"
+                        }
+                    }
+                },
+                "technicalSuitability": {
+                    "icon": {
+                        "type": "star",
+                        "color": "#f3b307",
+                        "reverse": false
+                    },
+                    "values": {
+                        "fullyAppropriate": {
+                            "bgColor": "#4B8B07"
+                        },
+                        "adequate": {
+                            "bgColor": "#92D050"
+                        },
+                        "unreasonable": {
+                            "bgColor": "#FFF600"
+                        },
+                        "inappropriate": {
+                            "bgColor": "#C00000"
+                        }
+                    }
+                },
+                "relHospitalToBusinessCapability": {
+                    "functionalSuitability": {
+                        "icon": {
+                            "type": "star",
+                            "color": "#f3b307",
+                            "reverse": false
+                        }
+                    },
+                    "availability": {
+                        "icon": {
+                            "type": "star",
+                            "color": "#f3b307",
+                            "reverse": false
+                        },
+                        "values": {
+                            "red": {
+                                "bgColor": "#c00000"
+                            },
+                            "yellow": {
+                                "bgColor": "#ffd02c"
+                            },
+                            "green": {
+                                "bgColor": "#008000"
+                            }
+                        }
+                    }
+                },
+                "relHospitalToPlace": {
+                    "functionalSuitability": {
+                        "icon": {
+                            "type": "star",
+                            "color": "#f3b307",
+                            "reverse": false
+                        }
+                    }
+                }
+            },
+            "sections": [
+                {
+                    "label": "section.information",
+                    "subsections": [
+                        {
+                            "label": "subsection.nameDescription.label",
+                            "template": "fields",
+                            "templateOptions": {
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "bedsTotal",
+                                            "type": "number",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "alias",
+                                            "type": "text",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "externalId",
+                                            "type": "externalId",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        },
+                        {
+                            "label": "subsection.location.label",
+                            "helpText": "subsection.location.helpText",
+                            "template": "fields",
+                            "templateOptions": {
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "location",
+                                            "type": "location",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        },
+                        {
+                            "label": "subsection.capacity.label",
+                            "template": "fields",
+                            "templateOptions": {
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "bedsTotal",
+                                            "type": "number",
+                                            "size": 3,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "bedsTotalUsed",
+                                            "type": "number",
+                                            "size": 3,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "bedsICU",
+                                            "type": "number",
+                                            "size": 3,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "bedsICUUsed",
+                                            "type": "number",
+                                            "size": 3,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        },
+                        {
+                            "label": "subsection.acl.label",
+                            "helpText": "subsection.acl.helpText",
+                            "template": "fields",
+                            "templateOptions": {
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "permittedReadACL",
+                                            "type": "acl",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        },
+                                        {
+                                            "name": "permittedWriteACL",
+                                            "type": "acl",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 0.0
+                        },
+                        {
+                            "label": "subsection.relationDiagram.label",
+                            "template": "relationDiagram",
+                            "templateOptions": null,
+                            "weight": 0.0
+                        }
+                    ],
+                    "tabs": [
+                        "default"
+                    ],
+                    "weight": 1.0
+                },
+                {
+                    "label": "section.businessSupport",
+                    "subsections": [
+                        {
+                            "label": "subsection.factSheetsSupported.label",
+                            "helpText": "subsection.factSheetsSupported.helpText",
+                            "template": "relation",
+                            "templateOptions": {
+                                "relationName": "relHospitalToBusinessCapability",
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "availability",
+                                            "type": "status",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        },
+                        {
+                            "label": "subsection.places.label",
+                            "helpText": "subsection.places.helpText",
+                            "template": "relation",
+                            "templateOptions": {
+                                "relationName": "relHospitalToPlace",
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "usageType",
+                                            "type": "status",
+                                            "size": 4,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "numberOfUsers",
+                                            "type": "number",
+                                            "size": 4,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "functionalSuitability",
+                                            "type": "status",
+                                            "size": 4,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        }
+                    ],
+                    "tabs": [
+                        "default"
+                    ],
+                    "weight": 1.0
+                }
+            ],
+            "hoverConfig": null,
+            "factSheetTabRestriction": null
+        },
+        {
+            "type": "DataSource",
+            "bgColor": "#73bc94",
+            "color": "#fff",
+            "onTheFlyCreation": true,
+            "fieldMetaData": {},
+            "sections": [
+                {
+                    "label": "section.information",
+                    "subsections": [
+                        {
+                            "label": "subsection.nameDescription.label",
+                            "template": "fields",
+                            "templateOptions": {
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "name",
+                                            "type": "text",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "alias",
+                                            "type": "text",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "externalId",
+                                            "type": "externalId",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        },
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 1.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        },
+                        {
+                            "label": "subsection.acl.label",
+                            "helpText": "subsection.acl.helpText",
+                            "template": "fields",
+                            "templateOptions": {
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "permittedReadACL",
+                                            "type": "acl",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        },
+                                        {
+                                            "name": "permittedWriteACL",
+                                            "type": "acl",
+                                            "size": 6,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 0.0
+                        },
+                        {
+                            "label": "subsection.relationDiagram.label",
+                            "template": "relationDiagram",
+                            "templateOptions": null,
+                            "weight": 0.0
+                        }
+                    ],
+                    "tabs": [
+                        "default"
+                    ],
+                    "weight": 1.0
+                },
+                {
+                    "label": "section.businessSupport",
+                    "subsections": [
+                        {
+                            "label": "subsection.places.label",
+                            "helpText": "subsection.places.helpText",
+                            "template": "relation",
+                            "templateOptions": {
+                                "relationName": "relDataSourceToPlace",
+                                "layout": {
+                                    "fields": [
+                                        {
+                                            "name": "description",
+                                            "type": "textarea",
+                                            "size": 12,
+                                            "readonly": false,
+                                            "weight": 0.0
+                                        }
+                                    ]
+                                }
+                            },
+                            "weight": 1.0
+                        }
+                    ],
+                    "tabs": [
+                        "default"
+                    ],
+                    "weight": 1.0
+                }
+            ],
+            "hoverConfig": null,
+            "factSheetTabRestriction": {
+                "surveys": [],
+                "metrics": [],
+                "subscriptions": [],
+                "comments": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,103 @@
+{
+    "menu": {
+        "matrix": {
+            "icon": "fal fa-table",
+            "entries": [
+                {
+                    "report": "landscape-hospital",
+                    "enabled": true,
+                    "predefinedReportDescription": "The Hospital Landscape report gives you a color-coded overview of your Hospitals, Capabilities and Places.",
+                    "predefinedReportName": "Hospital Landscape",
+                    "defaultSharingPriority": 10
+                },
+                {
+                    "report": "matrix-hospital",
+                    "enabled": true,
+                    "predefinedReportDescription": "The Hospital Matrix report gives you a color-coded overview of your Hospitals, Capabilities and Places.",
+                    "predefinedReportName": "Hospital Matrix",
+                    "defaultSharingPriority": 10
+                },
+                {
+                    "report": "worldmap-hospital",
+                    "enabled": true,
+                    "predefinedReportDescription": "The Hospital Map shows the locations of all Hospitals.",
+                    "predefinedReportName": "Hospital Map",
+                    "defaultSharingPriority": 10
+                }
+            ]
+        }
+    },
+    "reports": {
+        "landscape-hospital": {
+            "id": "net.leanix.matrix",
+            "version": null,
+            "config": {
+                "factSheetType": "Hospital",
+                "renderer": "ClusterMap",
+                "setup": {
+                    "axisConfigs": [
+                        {
+                            "pfType": "Place",
+                            "gqlRelation": "relHospitalToPlace"
+                        },
+                        {
+                            "pfType": "BusinessCapability",
+                            "gqlRelation": "relHospitalToBusinessCapability"
+                        }
+                    ]
+                },
+                "config": {
+                    "xAxis": {
+                        "resource": "Place",
+                        "hideIfEmpty": false
+                    }
+                }
+            }
+        },
+        "matrix-hospital": {
+            "id": "net.leanix.matrix",
+            "version": null,
+            "config": {
+                "factSheetType": "Hospital",
+                "renderer": "Matrix",
+                "setup": {
+                    "axisConfigs": [
+                        {
+                            "pfType": "BusinessCapability",
+                            "gqlRelation": "relHospitalToBusinessCapability",
+                            "type": "main",
+                            "axis": [
+                                "xAxis"
+                            ]
+                        },
+                        {
+                            "pfType": "Place",
+                            "gqlRelation": "relHospitalToPlace",
+                            "type": "constraint",
+                            "axis": [
+                                "yAxis"
+                            ]
+                        }
+                    ]
+                },
+                "config": {
+                    "xAxis": {
+                        "resource": "BusinessCapability",
+                        "hideIfEmpty": false
+                    },
+                    "yAxis": {
+                        "resource": "Place",
+                        "hideIfEmpty": false
+                    }
+                }
+            }
+        },
+        "worldmap-hospital": {
+            "id": "net.leanix.worldmap",
+            "version": null,
+            "config": {
+                "factSheetType": "Hospital"
+            }
+        }
+    }
+}

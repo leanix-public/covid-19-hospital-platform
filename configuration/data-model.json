@@ -1,0 +1,560 @@
+{
+    "factSheets": {
+        "BusinessCapability": {
+            "config": {
+                "qualitySeal": {
+                    "enabled": true,
+                    "value": 7776000,
+                    "unit": "SECONDS",
+                    "ignoreUpdatesForFields": [],
+                    "ignoreUpdatesForRelations": []
+                },
+                "maxHierarchyLevel": 3
+            },
+            "fields": {
+                "lifecycle": {
+                    "inFacet": true,
+                    "inView": true,
+                    "values": [
+                        "plan",
+                        "phaseIn",
+                        "active",
+                        "phaseOut",
+                        "endOfLife"
+                    ],
+                    "type": "LIFECYCLE"
+                },
+                "alias": {
+                    "quickSearch": true,
+                    "fullTextSearch": true,
+                    "validators": null,
+                    "type": "STRING"
+                }
+            },
+            "namingRule": {
+                "regular": {
+                    "fullName": [
+                        {
+                            "field": "name"
+                        }
+                    ],
+                    "displayName": [
+                        {
+                            "field": "fullName"
+                        },
+                        {
+                            "relation": "relToParent",
+                            "separator": " / ",
+                            "operation": "PREPEND"
+                        }
+                    ]
+                },
+                "autogenerate": {
+                    "fullName": [
+                        {
+                            "field": "id"
+                        },
+                        {
+                            "fixed": "BC",
+                            "separator": " ",
+                            "operation": "PREPEND"
+                        }
+                    ],
+                    "displayName": [
+                        {
+                            "field": "fullName"
+                        },
+                        {
+                            "relation": "relToParent",
+                            "separator": " / ",
+                            "operation": "PREPEND"
+                        }
+                    ]
+                }
+            }
+        },
+        "Place": {
+            "config": {
+                "qualitySeal": {
+                    "enabled": true,
+                    "value": 7776000,
+                    "unit": "SECONDS",
+                    "ignoreUpdatesForFields": [],
+                    "ignoreUpdatesForRelations": []
+                },
+                "maxHierarchyLevel": 2
+            },
+            "fields": {
+                "lifecycle": {
+                    "inFacet": true,
+                    "inView": true,
+                    "values": [
+                        "plan",
+                        "phaseIn",
+                        "active",
+                        "phaseOut",
+                        "endOfLife"
+                    ],
+                    "type": "LIFECYCLE"
+                },
+                "alias": {
+                    "quickSearch": true,
+                    "fullTextSearch": true,
+                    "validators": null,
+                    "type": "STRING"
+                },
+                "location": {
+                    "inFacet": true,
+                    "type": "LOCATION"
+                }
+            },
+            "namingRule": {
+                "regular": {
+                    "fullName": [
+                        {
+                            "field": "name"
+                        }
+                    ],
+                    "displayName": [
+                        {
+                            "field": "fullName"
+                        },
+                        {
+                            "relation": "relToParent",
+                            "separator": " / ",
+                            "operation": "PREPEND"
+                        }
+                    ]
+                },
+                "autogenerate": {
+                    "fullName": [
+                        {
+                            "field": "id"
+                        },
+                        {
+                            "fixed": "USG",
+                            "separator": " ",
+                            "operation": "PREPEND"
+                        }
+                    ],
+                    "displayName": [
+                        {
+                            "field": "fullName"
+                        },
+                        {
+                            "relation": "relToParent",
+                            "separator": " / ",
+                            "operation": "PREPEND"
+                        }
+                    ]
+                }
+            }
+        },
+        "Hospital": {
+            "config": {
+                "qualitySeal": {
+                    "enabled": true,
+                    "value": 7776000,
+                    "unit": "SECONDS",
+                    "ignoreUpdatesForFields": [],
+                    "ignoreUpdatesForRelations": []
+                },
+                "maxHierarchyLevel": 3
+            },
+            "fields": {
+                "lifecycle": {
+                    "inView": true,
+                    "values": [
+                        "plan",
+                        "phaseIn",
+                        "active",
+                        "phaseOut",
+                        "endOfLife"
+                    ],
+                    "type": "LIFECYCLE"
+                },
+                "location": {
+                    "inFacet": true,
+                    "type": "LOCATION"
+                },
+                "functionalSuitabilityDescription": {
+                    "validators": null,
+                    "type": "STRING"
+                },
+                "technicalSuitabilityDescription": {
+                    "validators": null,
+                    "type": "STRING"
+                },
+                "functionalSuitability": {
+                    "inView": true,
+                    "viewAggregation": "MIN",
+                    "values": [
+                        "unreasonable",
+                        "insufficient",
+                        "appropriate",
+                        "perfect"
+                    ],
+                    "type": "SINGLE_SELECT"
+                },
+                "bedsICU": {
+                    "inView": true,
+                    "type": "INTEGER"
+                },
+                "bedsICUUsed": {
+                    "inView": true,
+                    "type": "INTEGER"
+                },
+                "technicalSuitability": {
+                    "inView": true,
+                    "viewAggregation": "MIN",
+                    "values": [
+                        "inappropriate",
+                        "unreasonable",
+                        "adequate",
+                        "fullyAppropriate"
+                    ],
+                    "type": "SINGLE_SELECT"
+                },
+                "businessCriticality": {
+                    "inView": true,
+                    "values": [
+                        "administrativeService",
+                        "businessOperational",
+                        "businessCritical",
+                        "missionCritical"
+                    ],
+                    "type": "SINGLE_SELECT"
+                },
+                "release": {
+                    "validators": null,
+                    "type": "STRING"
+                },
+                "businessCriticalityDescription": {
+                    "validators": null,
+                    "type": "STRING"
+                },
+                "alias": {
+                    "quickSearch": true,
+                    "fullTextSearch": true,
+                    "validators": null,
+                    "type": "STRING"
+                }
+            },
+            "namingRule": {
+                "regular": {
+                    "fullName": [
+                        {
+                            "field": "name"
+                        },
+                        {
+                            "field": "release",
+                            "separator": " ",
+                            "operation": "APPEND"
+                        }
+                    ],
+                    "displayName": [
+                        {
+                            "field": "fullName"
+                        },
+                        {
+                            "relation": "relToParent",
+                            "separator": " / ",
+                            "operation": "PREPEND"
+                        }
+                    ]
+                },
+                "autogenerate": {
+                    "fullName": [
+                        {
+                            "field": "id"
+                        },
+                        {
+                            "fixed": "APP",
+                            "separator": " ",
+                            "operation": "PREPEND"
+                        }
+                    ],
+                    "displayName": [
+                        {
+                            "field": "fullName"
+                        },
+                        {
+                            "relation": "relToParent",
+                            "separator": " / ",
+                            "operation": "PREPEND"
+                        }
+                    ]
+                }
+            }
+        },
+        "DataSource": {
+            "config": {
+                "qualitySeal": {
+                    "enabled": true,
+                    "value": 7776000,
+                    "unit": "SECONDS",
+                    "ignoreUpdatesForFields": [],
+                    "ignoreUpdatesForRelations": []
+                },
+                "maxHierarchyLevel": 1
+            },
+            "fields": {
+                "alias": {
+                    "quickSearch": true,
+                    "fullTextSearch": true,
+                    "validators": null,
+                    "type": "STRING"
+                }
+            },
+            "namingRule": {
+                "regular": {
+                    "fullName": [
+                        {
+                            "field": "name"
+                        }
+                    ],
+                    "displayName": [
+                        {
+                            "field": "fullName"
+                        },
+                        {
+                            "relation": "relToParent",
+                            "separator": " / ",
+                            "operation": "PREPEND"
+                        }
+                    ]
+                },
+                "autogenerate": {
+                    "fullName": [
+                        {
+                            "field": "id"
+                        },
+                        {
+                            "fixed": "DS",
+                            "separator": " ",
+                            "operation": "PREPEND"
+                        }
+                    ],
+                    "displayName": [
+                        {
+                            "field": "fullName"
+                        },
+                        {
+                            "relation": "relToParent",
+                            "separator": " / ",
+                            "operation": "PREPEND"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "relations": {
+        "childParentRelation": {
+            "from": {
+                "factSheetType": "*",
+                "multiplicity": "1",
+                "name": "relToParent"
+            },
+            "to": {
+                "factSheetType": "*",
+                "multiplicity": "*",
+                "name": "relToChild"
+            },
+            "fields": {
+                "description": {
+                    "validators": null,
+                    "type": "STRING"
+                }
+            },
+            "constrainingRelations": null,
+            "constraints": [
+                "TYPE_EQUAL"
+            ]
+        },
+        "requiresRelation": {
+            "from": {
+                "factSheetType": "*",
+                "multiplicity": "*",
+                "name": "relToRequires"
+            },
+            "to": {
+                "factSheetType": "*",
+                "multiplicity": "*",
+                "name": "relToRequiredBy"
+            },
+            "fields": {
+                "description": {
+                    "validators": null,
+                    "type": "STRING"
+                }
+            },
+            "constrainingRelations": null,
+            "constraints": []
+        },
+        "successorRelation": {
+            "from": {
+                "factSheetType": "*",
+                "multiplicity": "*",
+                "name": "relToSuccessor"
+            },
+            "to": {
+                "factSheetType": "*",
+                "multiplicity": "*",
+                "name": "relToPredecessor"
+            },
+            "fields": {
+                "description": {
+                    "validators": null,
+                    "type": "STRING"
+                }
+            },
+            "constrainingRelations": null,
+            "constraints": [
+                "TYPE_EQUAL"
+            ]
+        },
+        "hospitalPlaceRelation": {
+            "from": {
+                "factSheetType": "Hospital",
+                "multiplicity": "*",
+                "name": "relHospitalToPlace"
+            },
+            "to": {
+                "factSheetType": "Place",
+                "multiplicity": "*",
+                "name": "relPlaceToHospital"
+            },
+            "fields": {
+                "functionalSuitability": {
+                    "values": [
+                        "unreasonable",
+                        "insufficient",
+                        "appropriate",
+                        "perfect"
+                    ],
+                    "type": "SINGLE_SELECT"
+                },
+                "numberOfUsers": {
+                    "type": "INTEGER"
+                },
+                "description": {
+                    "validators": null,
+                    "type": "STRING"
+                },
+                "usageType": {
+                    "values": [
+                        "user",
+                        "owner"
+                    ],
+                    "type": "SINGLE_SELECT"
+                }
+            },
+            "constrainingRelations": null,
+            "constraints": []
+        },
+        "hospitalBusinessCapabilityRelation": {
+            "from": {
+                "factSheetType": "Hospital",
+                "multiplicity": "*",
+                "name": "relHospitalToBusinessCapability"
+            },
+            "to": {
+                "factSheetType": "BusinessCapability",
+                "multiplicity": "*",
+                "name": "relBusinessCapabilityToHospital"
+            },
+            "fields": {
+                "supportType": {
+                    "values": [
+                        "supports",
+                        "leading"
+                    ],
+                    "type": "SINGLE_SELECT"
+                },
+                "functionalSuitability": {
+                    "values": [
+                        "unreasonable",
+                        "insufficient",
+                        "appropriate",
+                        "perfect"
+                    ],
+                    "type": "SINGLE_SELECT"
+                },
+                "availability": {
+                    "inView": true,
+                    "viewAggregation": "MIN",
+                    "values": [
+                        "red",
+                        "yellow",
+                        "green"
+                    ],
+                    "type": "SINGLE_SELECT"
+                },
+                "description": {
+                    "validators": null,
+                    "type": "STRING"
+                }
+            },
+            "constrainingRelations": [
+                "hospitalPlaceRelation"
+            ],
+            "constraints": []
+        },
+        "dataSourcePlaceRelation": {
+            "from": {
+                "factSheetType": "DataSource",
+                "multiplicity": "*",
+                "name": "relDataSourceToPlace"
+            },
+            "to": {
+                "factSheetType": "Place",
+                "multiplicity": "*",
+                "name": "relPlaceToDataSource"
+            },
+            "fields": {
+                "description": {
+                    "validators": null,
+                    "type": "STRING"
+                }
+            },
+            "constrainingRelations": null,
+            "constraints": []
+        }
+    },
+    "validators": {},
+    "externalIdFields": {
+        "externalId": {
+            "quickSearch": true,
+            "fullTextSearch": true,
+            "urlTemplate": null,
+            "uniqueFactSheet": false,
+            "autoIncrement": false,
+            "autoIncrementPrefix": null,
+            "autoIncrementMinLength": 0,
+            "readOnly": false,
+            "forFactSheets": [
+                "Hospital",
+                "Place",
+                "BusinessCapability",
+                "DataSource"
+            ]
+        }
+    },
+    "rules": {
+        "defaultNamingRule": {
+            "regular": {
+                "fullName": [
+                    {
+                        "field": "name"
+                    }
+                ],
+                "displayName": [
+                    {
+                        "field": "fullName"
+                    }
+                ]
+            }
+        }
+    }
+}

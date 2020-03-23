@@ -1,0 +1,46 @@
+[
+    {
+        "permissions": [
+            "FACT_SHEETS:READ,UPDATE:*",
+            "FACT_SHEET_FIELDS:READ:*:*",
+            "FACT_SHEET_RELATION_FIELDS:READ:*:*:*",
+            "FACT_SHEET_BASE_FIELDS:READ:*:*",
+            "FACT_SHEET_BASE_FIELDS:UPDATE,CREATE:*:comments",
+            "FACT_SHEET_BASE_FIELDS:UPDATE,CREATE,DELETE:*:subscriptions:self",
+            "FACT_SHEET_BASE_FIELDS:UPDATE:*:qualitySeal[subscriptionCheck(RESPONSIBLE,ACCOUNTABLE)]",
+            "ADMIN:READ:SUBSCRIPTION_ROLES,TAG_GROUPS,TAGS,AUDIT_LOG:*",
+            "BOOKMARKS:READ,UPDATE,CREATE,DELETE:*"
+        ],
+        "name": "VIEWER"
+    },
+    {
+        "permissions": [
+            "FACT_SHEETS:READ,UPDATE,CREATE,ARCHIVE,IMPORT,EXPORT,INLINE_EDIT:*",
+            "FACT_SHEET_BASE_FIELDS:READ:*:*",
+            "FACT_SHEET_BASE_FIELDS:UPDATE,CREATE,DELETE:*:name,category,status,subscriptions,comments,naFields,documents,description,permittedReadACL,permittedWriteACL,tags",
+            "FACT_SHEET_BASE_FIELDS:UPDATE:*:qualitySeal[subscriptionCheck(RESPONSIBLE,ACCOUNTABLE)]",
+            "FACT_SHEET_FIELDS:READ,UPDATE,CREATE,DELETE:*:*",
+            "FACT_SHEET_RELATION_FIELDS:READ,UPDATE:*:*:*",
+            "ADMIN:READ:SUBSCRIPTION_ROLES,TAG_GROUPS,TAGS,AUDIT_LOG:*",
+            "ADMIN:CREATE:TAGS:*",
+            "ADMIN:UPDATE,CREATE:USERS",
+            "BOOKMARKS:READ,UPDATE,CREATE,DELETE:*"
+        ],
+        "name": "MEMBER"
+    },
+    {
+        "permissions": [
+            "FACT_SHEETS:READ,UPDATE,CREATE,ARCHIVE,IMPORT,EXPORT,INLINE_EDIT:*",
+            "FACT_SHEET_BASE_FIELDS:READ,UPDATE,CREATE,DELETE:*:*",
+            "FACT_SHEET_FIELDS:READ,UPDATE,CREATE,DELETE:*:*",
+            "FACT_SHEET_RELATION_FIELDS:READ,UPDATE:*:*:*",
+            "ADMIN:*",
+            "ACE:*",
+            "BOOKMARKS:READ,UPDATE,CREATE,DELETE:*",
+            "BOOKMARKS:UNLOCK:VISUALIZER",
+            "BOOKMARKS:CHANGE_OWNER",
+            "BOOKMARKS:MANAGE_PREDEFINED"
+        ],
+        "name": "ADMIN"
+    }
+]

@@ -1,0 +1,729 @@
+{
+    "dataModel": {
+        "externalIdFields": {
+            "externalId": {
+                "label": "External ID",
+                "helpText": "Store your External ID here which uniquely identifies this Fact Sheet."
+            },
+            "technopediaId": {
+                "label": "Technopedia ID",
+                "values": {
+                    "LINKED": "Linked",
+                    "IGNORED": "Ignored",
+                    "MISSING": "Missing",
+                    "LIFECYCLE_ONLY": "Linked (lifecycle)"
+                },
+                "helpText": ""
+            },
+            "leanixV3IdProcess": "LeanIX v3 ID",
+            "leanixV3IdProject": "LeanIX v3 ID",
+            "signavioProcessId": {
+                "label": "Signavio Process",
+                "values": {
+                    "LINKED": "Linked"
+                }
+            },
+            "leanixV3IdHospital": "LeanIX v3 ID",
+            "leanixV3IdProvider": "LeanIX v3 ID",
+            "leanixV3IdInterface": "LeanIX v3 ID",
+            "leanixV3IdUserGroup": "LeanIX v3 ID",
+            "leanixV3IdDataObject": "LeanIX v3 ID",
+            "leanixV3IdITComponent": "LeanIX v3 ID",
+            "signavioGlossaryItemId": {
+                "label": "Signavio Glossary",
+                "values": {
+                    "LINKED": "Linked"
+                }
+            },
+            "leanixV3IdTechnicalStack": "LeanIX v3 ID",
+            "leanixV3IdBusinessCapability": "LeanIX v3 ID"
+        },
+        "factSheets": {
+            "Place": {
+                "fields": {
+                    "alias": {
+                        "label": "Alias",
+                        "helpText": "Use this field for an alternative name, which is also used in full-text search."
+                    },
+                    "location": "Location",
+                    "lifecycle": {
+                        "label": "Lifecycle",
+                        "values": {
+                            "plan": {
+                                "label": "Plan",
+                                "helpText": "Planning state and not clear whether it will be implemented"
+                            },
+                            "active": {
+                                "label": "Active",
+                                "helpText": "Productive in use"
+                            },
+                            "phaseIn": {
+                                "label": "Phase in",
+                                "helpText": "In phase of being built or acquired"
+                            },
+                            "phaseOut": {
+                                "label": "Phase out",
+                                "helpText": "Retired at the end of this phase"
+                            },
+                            "endOfLife": {
+                                "label": "End of life",
+                                "helpText": "Out-of-life and cannot be used anymore"
+                            }
+                        }
+                    }
+                },
+                "label": {
+                    "plural": "Places",
+                    "singular": "Place"
+                }
+            },
+            "Hospital": {
+                "fields": {
+                    "alias": {
+                        "label": "Alias",
+                        "helpText": "Use this field for an alternative name, which is also used in full-text search."
+                    },
+                    "bedsICU": {
+                        "label": "ICU beds"
+                    },
+                    "release": "Release",
+                    "bedsTotal": {
+                        "label": "Total beds"
+                    },
+                    "lifecycle": {
+                        "label": "Lifecycle",
+                        "values": {
+                            "plan": {
+                                "label": "Plan",
+                                "helpText": "The {{factSheet}} is still in the planning state and it is not clear whether it will be implemented"
+                            },
+                            "active": {
+                                "label": "Active",
+                                "helpText": "The {{factSheet}} is productive and in use"
+                            },
+                            "phaseIn": {
+                                "label": "Phase in",
+                                "helpText": "The {{factSheet}} is in the phase of being built or acquired"
+                            },
+                            "phaseOut": {
+                                "label": "Phase out",
+                                "helpText": "The {{factSheet}} will be retired at the end of this phase"
+                            },
+                            "endOfLife": {
+                                "label": "End of life",
+                                "helpText": "The {{factSheet}} is out-of-life and cannot be used anymore"
+                            }
+                        }
+                    },
+                    "bedsICUUsed": {
+                        "label": "ICU beds used"
+                    },
+                    "bedsTotalUsed": {
+                        "label": "Total beds used"
+                    },
+                    "businessCriticality": {
+                        "label": "Business Criticality",
+                        "values": {
+                            "missionCritical": {
+                                "label": "Mission critical",
+                                "helpText": "Breaks in service are intolerable and immediately significantly damaging. Availability required at almost any price."
+                            },
+                            "businessCritical": {
+                                "label": "Business critical",
+                                "helpText": "A business-critical service requires continuous availability, short breaks in service are not catastrophic."
+                            },
+                            "businessOperational": {
+                                "label": "Business operational",
+                                "helpText": "Contributing to efficient business operation but out of direct line of service to customer."
+                            },
+                            "administrativeService": {
+                                "label": "Administrative service",
+                                "helpText": "Failures are undesirable but do not affect customers and can be tolerated a little more."
+                            }
+                        },
+                        "helpText": "In your judgement, identify the appropriate service level and disaster recovery requirements."
+                    },
+                    "technicalSuitability": {
+                        "label": "Technical Fit",
+                        "values": {
+                            "adequate": {
+                                "label": "Adequate",
+                                "helpText": "Some parts could be optimized"
+                            },
+                            "unreasonable": {
+                                "label": "Unreasonable",
+                                "helpText": "Replacement recommended to satisfy the business requirements."
+                            },
+                            "inappropriate": {
+                                "label": "Inappropriate",
+                                "helpText": "Replacement mandatory to satisfy the business requirements."
+                            },
+                            "fullyAppropriate": {
+                                "label": "Fully appropriate",
+                                "helpText": "No change needed apart from regular maintenance."
+                            }
+                        },
+                        "helpText": "In your judgement, is there any need to replace services, software or hardware with respect to the business requirements today and in the near future (next 2 years)."
+                    },
+                    "functionalSuitability": {
+                        "label": "Functional Fit",
+                        "values": {
+                            "perfect": {
+                                "label": "Perfect",
+                                "helpText": "High number of functions available."
+                            },
+                            "appropriate": {
+                                "label": "Appropriate",
+                                "helpText": "All major functions."
+                            },
+                            "insufficient": {
+                                "label": "Insufficient",
+                                "helpText": "Rudimentary functional support."
+                            },
+                            "unreasonable": {
+                                "label": "Unreasonable",
+                                "helpText": "Not enough or wrong functionality."
+                            }
+                        },
+                        "helpText": "In your judgement, how well does this {{factSheet}} meet the business requirements today and in the near future (next 2 years)."
+                    },
+                    "businessCriticalityDescription": {
+                        "label": "Business Criticality Description",
+                        "helpText": "Please provide background information about the business criticality of this {{factSheet}}."
+                    },
+                    "technicalSuitabilityDescription": {
+                        "label": "Technical Fit Description",
+                        "helpText": "Please provide background information to the state of health of this {{factSheet}}."
+                    },
+                    "functionalSuitabilityDescription": {
+                        "label": "Functional Fit Description",
+                        "helpText": "Please provide background information about the functional fit of this {{factSheet}}."
+                    }
+                },
+                "label": {
+                    "plural": "Hospitals",
+                    "singular": "Hospital"
+                }
+            },
+            "DataSource": {
+                "fields": {},
+                "label": {
+                    "plural": "Data Sources",
+                    "singular": "Data Source"
+                }
+            },
+            "BusinessCapability": {
+                "fields": {
+                    "alias": {
+                        "label": "Alias",
+                        "helpText": "Use this field for an alternative name, which is also used in full-text search."
+                    },
+                    "lifecycle": {
+                        "label": "Lifecycle",
+                        "values": {
+                            "plan": {
+                                "label": "Plan",
+                                "helpText": "This {{factSheet}} is part of our capability roadmap"
+                            },
+                            "active": {
+                                "label": "Active",
+                                "helpText": "This {{factSheet}} must be supported"
+                            },
+                            "phaseIn": {
+                                "label": "Phase in",
+                                "helpText": "The needs of this {{factSheet}} are in the define phase"
+                            },
+                            "phaseOut": {
+                                "label": "Phase out",
+                                "helpText": "This {{factSheet}} is planned to be phased-out"
+                            },
+                            "endOfLife": {
+                                "label": "End of life",
+                                "helpText": "Support of this {{factSheet}} is no longer necessary"
+                            }
+                        }
+                    }
+                },
+                "label": {
+                    "plural": "Hospital Capabilities",
+                    "singular": "Hospital Capability"
+                }
+            }
+        },
+        "relations": {
+            "requiresRelation": {
+                "fields": {
+                    "description": "Description"
+                },
+                "labels": {
+                    "relToRequires": "Requires",
+                    "relToRequiredBy": "Required by"
+                }
+            },
+            "successorRelation": {
+                "fields": {
+                    "description": "Description"
+                },
+                "labels": {
+                    "relToSuccessor": "Successors",
+                    "relToPredecessor": "Predecessors"
+                }
+            },
+            "childParentRelation": {
+                "fields": {
+                    "description": "Description"
+                },
+                "labels": {
+                    "relToChild": "Children",
+                    "relToParent": "Parents"
+                }
+            },
+            "hospitalPlaceRelation": {
+                "fields": {
+                    "usageType": {
+                        "label": "Usage type",
+                        "values": {
+                            "user": "User",
+                            "owner": "Owner"
+                        },
+                        "helpText": "Please choose whether this {{UserGroup}} is owning or using this {{Hospital}} (only one owner allowed)."
+                    },
+                    "description": "Description",
+                    "numberOfUsers": {
+                        "label": "Number of users",
+                        "helpText": "Please indicate roughly how many users are using this {{Hospital}}."
+                    },
+                    "functionalSuitability": {
+                        "label": "Functional Fit",
+                        "values": {
+                            "perfect": {
+                                "label": "Perfect",
+                                "helpText": "High number of functions available."
+                            },
+                            "appropriate": {
+                                "label": "Appropriate",
+                                "helpText": "All major functions."
+                            },
+                            "insufficient": {
+                                "label": "Insufficient",
+                                "helpText": "Rudimentary functional support."
+                            },
+                            "unreasonable": {
+                                "label": "Unreasonable",
+                                "helpText": "Not enough or wrong functionality."
+                            }
+                        },
+                        "helpText": "Please estimate how well this {{Hospital}} meets the business requirements of this {{UserGroup}} today and in the near future (next 2 years)."
+                    }
+                },
+                "labels": {
+                    "relHospitalToPlace": "{{targetFactSheets}}",
+                    "relPlaceToHospital": "{{targetFactSheets}}"
+                }
+            },
+            "dataSourcePlaceRelation": {
+                "fields": {
+                    "usageType": {
+                        "label": "Usage type",
+                        "values": {
+                            "user": "User",
+                            "owner": "Owner"
+                        },
+                        "helpText": "Please choose whether this {{UserGroup}} is owning or using this {{Hospital}} (only one owner allowed)."
+                    },
+                    "description": "Description",
+                    "numberOfUsers": {
+                        "label": "Number of users",
+                        "helpText": "Please indicate roughly how many users are using this {{Hospital}}."
+                    },
+                    "functionalSuitability": {
+                        "label": "Functional Fit",
+                        "values": {
+                            "perfect": {
+                                "label": "Perfect",
+                                "helpText": "High number of functions available."
+                            },
+                            "appropriate": {
+                                "label": "Appropriate",
+                                "helpText": "All major functions."
+                            },
+                            "insufficient": {
+                                "label": "Insufficient",
+                                "helpText": "Rudimentary functional support."
+                            },
+                            "unreasonable": {
+                                "label": "Unreasonable",
+                                "helpText": "Not enough or wrong functionality."
+                            }
+                        },
+                        "helpText": "Please estimate how well this {{Hospital}} meets the business requirements of this {{UserGroup}} today and in the near future (next 2 years)."
+                    }
+                },
+                "labels": {
+                    "relDataSourceToPlace": "{{targetFactSheets}}",
+                    "relPlaceToDataSource": "{{targetFactSheets}}"
+                }
+            },
+            "hospitalBusinessCapabilityRelation": {
+                "fields": {
+                    "description": "Description",
+                    "supportType": {
+                        "label": "Support type",
+                        "values": {
+                            "leading": "Leading",
+                            "supports": "Supports"
+                        },
+                        "helpText": "Some reports require at least one leading entry when multiple {{BusinessCapability.plural}} are associated."
+                    },
+                    "availability": {
+                        "label": "Available Care Level",
+                        "values": {
+                            "red": {
+                                "label": "Fully Occupied"
+                            },
+                            "green": {
+                                "label": "Available"
+                            },
+                            "yellow": {
+                                "label": "Limited"
+                            }
+                        }
+                    },
+                    "functionalSuitability": {
+                        "label": "Functional Fit",
+                        "values": {
+                            "perfect": {
+                                "label": "Perfect",
+                                "helpText": "High number of functions available."
+                            },
+                            "appropriate": {
+                                "label": "Appropriate",
+                                "helpText": "All major functions."
+                            },
+                            "insufficient": {
+                                "label": "Insufficient",
+                                "helpText": "Rudimentary functional support."
+                            },
+                            "unreasonable": {
+                                "label": "Unreasonable",
+                                "helpText": "Not enough or wrong functionality."
+                            }
+                        },
+                        "helpText": "Please estimate how well this {{Hospital}} meets the business requirements of this {{BusinessCapability}} today and in the near future (next 2 years)."
+                    }
+                },
+                "labels": {
+                    "relBusinessCapabilityToHospital": "{{targetFactSheets}}",
+                    "relHospitalToBusinessCapability": "{{targetFactSheets}}"
+                }
+            }
+        },
+        "baseModel": {
+            "fields": {
+                "id": "ID",
+                "name": {
+                    "label": "Name",
+                    "helpText": "The name is used to identify this Fact Sheet in the Inventory, Reporting and Search."
+                },
+                "tags": "Tags",
+                "type": "Type",
+                "level": "Level",
+                "status": "Status",
+                "subtype": "Subtypes",
+                "TrashBin": {
+                    "label": "Trash Bin",
+                    "values": {
+                        "archived": "Archived"
+                    }
+                },
+                "category": "Subtype",
+                "fullName": {
+                    "label": "Full Name",
+                    "helpText": "The full name is auto-generated from various other fields."
+                },
+                "createdAt": "Created At",
+                "updatedAt": "Updated At",
+                "completion": "Completion",
+                "DataQuality": {
+                    "label": "Data Quality",
+                    "values": {
+                        "noLifecycle": "No lifecycle",
+                        "noAccountable": "No accountable",
+                        "noDescription": "No description",
+                        "noResponsible": "No responsible",
+                        "qualitySealBroken": "Quality Seal broken"
+                    }
+                },
+                "description": {
+                    "label": "Description",
+                    "helpText": "Please provide a meaningful description to enable other users to understand the main purpose."
+                },
+                "displayName": {
+                    "label": "Display Name",
+                    "helpText": "The display name is auto-generated from various other fields."
+                },
+                "qualitySeal": {
+                    "label": "Quality Seal",
+                    "values": {
+                        "BROKEN": "Broken",
+                        "APPROVED": "Approved",
+                        "DISABLED": "Disabled"
+                    }
+                },
+                "subscriptions": "Subscriptions",
+                "hierarchylevel": "Hierarchy Level",
+                "permittedReadACL": "Read access",
+                "permittedWriteACL": "Write access"
+            },
+            "label": {
+                "plural": "Fact Sheets",
+                "singular": "Fact Sheet"
+            }
+        }
+    },
+    "viewModel": {
+        "section": {
+            "projects": "Projects",
+            "sourcing": "Sourcing",
+            "reference": "Reference",
+            "information": "Information",
+            "dependencies": "Dependencies",
+            "projectSetup": "Project Setup",
+            "projectStatus": "Project Status",
+            "dataManagement": "Data Management",
+            "dataTechnology": "Data & Technology",
+            "evaluationCost": "Evaluation & Cost",
+            "businessSupport": "Business Support",
+            "demandManagement": "Demand Management",
+            "providerConsumers": "Provider & Consumers",
+            "projectEnvironment": "Project Environment",
+            "servicesSoftwareHardware": "Services, Software & Hardware"
+        },
+        "subsection": {
+            "acl": {
+                "helpText": "How can this {{factSheet}} be accessed?",
+                "label": "Access Control List"
+            },
+            "parents": {
+                "helpText": "What are the parents of this Fact Sheet?",
+                "label": "Parents"
+            },
+            "children": {
+                "helpText": "What are the children of this Fact Sheet?",
+                "label": "Children"
+            },
+            "location": {
+                "helpText": "Where is this {{factSheet}} located?",
+                "label": "Location"
+            },
+            "requires": {
+                "helpText": "Which {{targetFactSheets}} does this {{factSheet}} require?",
+                "label": "Requires"
+            },
+            "lifecycle": {
+                "helpText": "What is the lifecycle state (e.g. planned, active or end of life)?",
+                "label": "Lifecycle"
+            },
+            "requiredBy": {
+                "helpText": "Which {{targetFactSheets}} are required by this {{factSheet}}?",
+                "label": "Required by"
+            },
+            "successors": {
+                "helpText": "What are the successors?",
+                "label": "Successors"
+            },
+            "userGroups": {
+                "helpText": "Who is using this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "budgetCosts": {
+                "helpText": "What is the budget (OpEx/CapEx) of this {{factSheet}}?",
+                "label": "Budget Costs"
+            },
+            "factSheetOf": {
+                "helpText": "Who is the {{targetFactSheet}} of this {{factSheet}}?",
+                "label": "{{targetFactSheet}}"
+            },
+            "lastUpdates": {
+                "helpText": "What is the current status of this {{factSheet}}? What is the latest cost estimation?",
+                "label": "Last Updates"
+            },
+            "predecessors": {
+                "helpText": "What are the predecessors?",
+                "label": "Predecessors"
+            },
+            "classification": {
+                "helpText": "What is the security classification of this {{factSheet}}?",
+                "label": "Classification"
+            },
+            "factSheetsUsed": {
+                "helpText": "Which {{targetFactSheets}} are used by this {{factSheet}}?",
+                "label": "Used {{targetFactSheets}}"
+            },
+            "projectBenefit": {
+                "helpText": "What is the Net Present Value (NPV) and the Payback period of this {{factSheet}}?",
+                "label": "Benefit"
+            },
+            "factSheetsUsing": {
+                "helpText": "Which {{targetFactSheets}} are using this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "nameDescription": {
+                "helpText": null,
+                "label": "Name & Description"
+            },
+            "factSheetsLinked": {
+                "helpText": "Which {{targetFactSheets}} are linked to this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "projectProviders": {
+                "helpText": "Which {{targetFactSheets}} work for this {{factSheet}} (on which order)?",
+                "label": "{{targetFactSheets}}"
+            },
+            "projectValueRisk": {
+                "helpText": "What is the expected business value and overall project risk?",
+                "label": "Business Value & Risk"
+            },
+            "itComponentsUsing": {
+                "helpText": "Which services, software & hardware (e.g. Hosting, ASP, SaaS) is this {{factSheet}} using?",
+                "label": "{{targetFactSheets}}"
+            },
+            "criticalityQuality": {
+                "helpText": "How well does this {{factSheet}} support the business?",
+                "label": "Criticality & Quality"
+            },
+            "factSheetConsuming": {
+                "helpText": "Which {{targetFactSheets}} consume this {{factSheet}}?",
+                "label": "{{factSheet}} Consumers"
+            },
+            "factSheetProviding": {
+                "helpText": "Which {{targetFactSheet}} provides this {{factSheet}}?",
+                "label": "{{factSheet}} Providers"
+            },
+            "factSheetRelatedTo": {
+                "helpText": "Which {{targetFactSheet}} is related to this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsAffected": {
+                "helpText": "Which {{targetFactSheets}} are affected?",
+                "label": "Affected {{targetFactSheets}}"
+            },
+            "factSheetsConsumed": {
+                "helpText": "Which {{targetFactSheets}} are consumed by this {{factSheet}}?",
+                "label": "Consumed {{targetFactSheets}}"
+            },
+            "factSheetsProvided": {
+                "helpText": "Which {{targetFactSheets}} are provided by this {{factSheet}}?",
+                "label": "Provided {{targetFactSheets}}"
+            },
+            "factSheetsAffecting": {
+                "helpText": "Which {{targetFactSheets}} are affecting this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsSupported": {
+                "helpText": "Which {{targetFactSheets}} are supported by this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "interfaceProperties": {
+                "helpText": "What type, direction and frequency does this {{factSheet}} have?",
+                "label": "Properties"
+            },
+            "nameTypeDescription": {
+                "helpText": null,
+                "label": "Name, Type & Description"
+            },
+            "servicesSwHwOffered": {
+                "helpText": "Which services, software & hardware are offered by this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetBelongingTo": {
+                "helpText": "To which {{targetFactSheet}} does this {{factSheet}} belong?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsAssociated": {
+                "helpText": "Which {{targetFactSheets}} are associated with this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsSupporting": {
+                "helpText": "Which {{targetFactSheets}} support this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "technicalSuitability": {
+                "helpText": "In what shape is this {{factSheet}} from a technical point of view?",
+                "label": "Technical Fit"
+            },
+            "factSheetsTransferred": {
+                "helpText": "Which {{targetFactSheets}} are transferred via this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsTransferredBy": {
+                "helpText": "By which {{targetFactSheets}} is this {{factSheet}} transferred?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsExecutedWithin": {
+                "helpText": "Which {{targetFactSheets}} are executed within this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsImplementedWith": {
+                "helpText": "With which {{targetFactSheets}} is this {{factSheet}} implemented?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsImplementedUsing": {
+                "helpText": "Which {{targetFactSheets}} are implemented using this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "technicalStackItComponents": {
+                "helpText": "Which {{targetFactSheets}} belong to this {{factSheet}} entry?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsCreatedModifiedRequiredBy": {
+                "helpText": "Which {{targetFactSheets}} are created, modified or required by this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "factSheetsCreatingModifyingDeleting": {
+                "helpText": "Which {{targetFactSheets}} are creating, modifying or deleting this {{factSheet}}?",
+                "label": "{{targetFactSheets}}"
+            },
+            "businessCriticalityFunctionalSuitability": {
+                "helpText": "How well does this {{factSheet}} support the business?",
+                "label": "Business Criticality & Functional Fit"
+            }
+        }
+    },
+    "reportingModel": {
+        "menu": {
+            "cost": "Cost",
+            "matrix": "Matrix",
+            "heatmap": "Heat map",
+            "metrics": "Metrics",
+            "roadmap": "Roadmap",
+            "visualizer": "Visualizer"
+        },
+        "reports": {
+            "bc-cost": "{{BusinessCapability}} Cost",
+            "dataflow": "Data Flow",
+            "freedraw": "Free Drawing",
+            "circlemap": "{{Interface}} Circle Map",
+            "matrix-app": "{{Hospital}} Matrix",
+            "matrix-itc": "{{ITComponent}} Matrix",
+            "matrix-prj": "{{Project}} Matrix",
+            "roadmap-app": "{{Hospital}} Roadmap",
+            "roadmap-itc": "{{ITComponent}} Roadmap",
+            "project-cost": "{{Project}} Cost",
+            "roadmap-proj": "{{Project}} Roadmap",
+            "worldmap-itc": "{{ITComponent}} Location",
+            "landscape-app": "{{Hospital}} Landscape",
+            "landscape-itc": "{{ITComponent}} Landscape",
+            "landscape-prj": "{{Project}} Landscape",
+            "lifecycle-age": "Lifecycle & Age",
+            "portfolio-app": "{{Hospital}} Portfolio",
+            "provider-cost": "{{Provider}} Cost",
+            "landscape-zapp": "{{Hospital}} Landscape",
+            "portfolio-proj": "{{Project}} Portfolio",
+            "portfolio-prov": "{{Provider}} Portfolio",
+            "worldmap-app-itc": "{{Hospital}} Sourcing",
+            "worldmap-app-usergroup": "{{Hospital}} Usage"
+        }
+    },
+    "dashboardModel": null
+}
